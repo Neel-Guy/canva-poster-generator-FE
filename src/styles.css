@@ -1,7 +1,26 @@
 @import 'tailwindcss';
 
-@theme {
-  --color-bg-dark: oklch(0.72 0.11 178);
+@theme inline {
+  --color-bg-color: var(--bg-color);
+}
+
+[data-theme='light'] {
+  --bg-color: rgb(207, 232, 252);
+  color: rgb(17, 23, 47);
+}
+
+[data-theme='dark'] {
+  --bg-color: rgb(17, 23, 47);
+  color: rgb(207, 232, 252);
+}
+
+@layer components {
+  .view_window {
+    @apply bg-bg-color;
+    @apply w-screen h-screen;
+    @apply px-4;
+    @apply py-2;
+  }
 }
 
 body {
@@ -11,6 +30,30 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+h5 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+h6 {
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 code {

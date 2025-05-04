@@ -1,9 +1,15 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
+import axios from 'axios'
 import logo from '../logo.svg'
 
 export const Route = createFileRoute('/')({
   component: App,
 })
+
+const loginToCanva = async () => {
+  const response = await axios.get('https://canva.com')
+  console.log(response)
+}
 
 function App() {
   return (
